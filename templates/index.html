@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicație pentru procesarea unui array de numere</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplicație pentru procesarea unui array de numere</h1>
+        <form method="POST">
+            <label for="numbers">Introduceți un array de numere (ex: [1,2,3]):</label>
+            <input type="text" id="numbers" name="numbers" value="{{ numbers }}" required>
+            <input type="submit" value="Trimite">
+        </form>
+        {% if result is not none %}
+        <div class="result">
+            <h3>Suma array-ului este: {{ result }}</h3>
+        </div>
+        {% endif %}
+        {% if error is not none %}
+        <div class="error">
+            <h3>{{ error }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
